@@ -1,0 +1,31 @@
+<svg class="logo" viewBox="0 0 120 64" role="img" aria-label="Moon and little octopus logo">
+    <defs>
+        <linearGradient id="lg-moon" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffe9b0" />
+            <stop offset="1" stop-color="#f2b45a" />
+        </linearGradient>
+        <radialGradient id="lg-body" cx="40%" cy="30%" r="80%">
+            <stop offset="0" stop-color="#d9bcff" />
+            <stop offset="1" stop-color="#7a4ae0" />
+        </radialGradient>
+        <mask id="lg-cut">
+            <rect width="120" height="64" fill="#fff" />
+            <circle cx="46" cy="25" r="22" fill="#000" />
+        </mask>
+        <path id="lg-spark" d="M0 -9 Q1.5 -1.5 9 0 Q1.5 1.5 0 9 Q-1.5 1.5 -9 0 Q-1.5 -1.5 0 -9Z" />
+    </defs>
+    <circle cx="32" cy="33" r="26" fill="url(#lg-moon)" mask="url(#lg-cut)" />
+    <use href="#lg-spark" transform="translate(55 14)" fill="#7ff5ea" />
+    <g fill="none" stroke="#9a6bf5" stroke-width="6" stroke-linecap="round">
+        <path d="M70 38 C62 46 66 54 58 57" />
+        <path d="M78 41 C76 50 80 56 74 60" />
+        <path d="M88 41 C92 50 88 56 96 60" />
+        <path d="M96 38 C104 46 100 53 108 55" />
+    </g>
+    <ellipse cx="83" cy="29" rx="19" ry="17" fill="url(#lg-body)" />
+    <ellipse cx="76" cy="30" rx="3" ry="4" fill="#1b1033" />
+    <ellipse cx="91" cy="30" rx="3" ry="4" fill="#1b1033" />
+    <circle cx="77" cy="28.5" r="1.1" fill="#fff" />
+    <circle cx="92" cy="28.5" r="1.1" fill="#fff" />
+    <path d="M80 37 Q83.5 41 87 37" fill="none" stroke="#1b1033" stroke-width="1.8" stroke-linecap="round" />
+</svg>

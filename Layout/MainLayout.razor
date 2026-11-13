@@ -1,16 +1,17 @@
-﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+@inherits LayoutComponentBase
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+<div class="sky" aria-hidden="true">
+    <div class="stars s1"></div>
+    <div class="stars s2"></div>
+    <div class="stars s3"></div>
 </div>
+
+<NavMenu />
+
+<main class="wrap">
+    @Body
+</main>
+
+<footer class="foot">
+    <span>&#10022;</span> &copy; 2026 Shadow Craft Art <span>&#10022;</span>
+</footer>

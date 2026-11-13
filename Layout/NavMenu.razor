@@ -1,39 +1,38 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">ArtPage</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
+<header class="top">
+    <div class="top-inner">
+        <a class="brand" href="">
+            <Logo />
+            <span class="brand-text">Shadow Craft <em>Art</em></span>
+        </a>
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
+        <nav class="tabs" aria-label="Main menu">
+            <ul>
+                @foreach (var section in SiteData.Sections)
+                {
+                    <li class="tab">
+                        <NavLink class="tab-link" href="@section.Href" Match="@MatchFor(section)">@section.Title</NavLink>
+                        @if (section.Items.Length > 0)
+                        {
+                            <div class="panel">
+                                <ul>
+                                    @foreach (var item in section.Items)
+                                    {
+                                        <li><a href="@LinkFor(section, item)">@item</a></li>
+                                    }
+                                </ul>
+                            </div>
+                        }
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</header>
 
 @code {
-    private bool collapseNavMenu = true;
+    private static NavLinkMatch MatchFor(NavSection section) =>
+        section.Href.Length == 0 ? NavLinkMatch.All : NavLinkMatch.Prefix;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+    private static string LinkFor(NavSection section, string item) =>
+        section.Href + "#" + SiteData.Slug(item);
 }

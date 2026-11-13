@@ -1,7 +1,85 @@
-﻿@page "/"
+@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Shadow Craft Art</PageTitle>
 
-<h1>Hello, world!</h1>
+<section class="hero">
+    <div class="welcome card bubble">
+        <p class="kicker">&#10022; welcome &#10022;</p>
+        <h1>Hi, I'm <span class="glow">Shadow!</span></h1>
+        <p class="lead">Welcome to my website. Come in, look around, and stay a while. This is where I keep my art, my worlds and all my little projects.</p>
+        <div class="actions">
+            <a class="btn" href="art">See my art</a>
+            <a class="btn ghost" href="about">About me</a>
+        </div>
+    </div>
 
-Welcome to your new app.
+    <div class="mascot-wrap">
+        <Mascot />
+    </div>
+</section>
+
+<div class="board">
+    <div class="col">
+        <section class="card" id="commissions">
+            <h2 class="title">Commissions</h2>
+            <div class="slots" role="img" aria-label="2 of 4 commission slots open">
+                <span class="slot open">&#9733;</span>
+                <span class="slot open">&#9733;</span>
+                <span class="slot taken">&#9733;</span>
+                <span class="slot taken">&#9733;</span>
+            </div>
+            <p class="count"><strong>2 / 4</strong> slots open</p>
+            <a class="btn" href="shop#commissions">Apply now &#10022;</a>
+        </section>
+
+        <section class="card" id="chat">
+            <h2 class="title">Chat room</h2>
+            <div class="chat" aria-hidden="true">
+                <div class="msg"><i class="av"></i><b></b></div>
+                <div class="msg me"><i class="av"></i><b></b></div>
+                <div class="msg"><i class="av"></i><b class="short"></b></div>
+            </div>
+            <p class="soon">The chat room is opening soon &#10022;</p>
+        </section>
+    </div>
+
+    <div class="col">
+        <section class="card" id="latest">
+            <h2 class="title">Updates</h2>
+            <ul class="news">
+                <li>
+                    <time>13 Nov 2026</time>
+                    <strong>The website is open!</strong>
+                    <span>Thank you for visiting. More art and pages are on the way.</span>
+                </li>
+                <li>
+                    <time>This week</time>
+                    <strong>Commission slots</strong>
+                    <span>Two of four slots are open right now.</span>
+                </li>
+                <li>
+                    <time>Soon</time>
+                    <strong>New artwork</strong>
+                    <span>Fresh illustrations are coming to the gallery.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="card" id="playlist">
+            <h2 class="title">Playlist</h2>
+            <div class="player" aria-hidden="true">
+                <div class="disc"></div>
+                <div class="controls">
+                    <span>&#9198;</span>
+                    <span class="play">&#9654;</span>
+                    <span>&#9197;</span>
+                </div>
+                <div class="bar"><i></i></div>
+            </div>
+            <div class="tracks" aria-hidden="true">
+                <b></b><b></b><b class="short"></b>
+            </div>
+            <p class="soon">My favorite songs are coming soon &#10022;</p>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<PageTitle>@Title - Shadow Craft Art</PageTitle>
+
+<section class="card section-head">
+    <h1>@Title</h1>
+    <p>@Blurb</p>
+</section>
+
+<div class="mini-grid">
+    @foreach (var item in Items)
+    {
+        <article class="mini" id="@SiteData.Slug(item)">
+            <h2>@item</h2>
+            <p class="soon">Coming soon</p>
+        </article>
+    }
+</div>
+
+@code {
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string Blurb { get; set; } = "";
+    [Parameter] public string[] Items { get; set; } = System.Array.Empty<string>();
+}
