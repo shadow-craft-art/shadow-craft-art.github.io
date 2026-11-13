@@ -18,8 +18,6 @@ jobs:
         with:
           dotnet-version: 10.0.x
       - run: dotnet publish -c Release -o release
-      - name: Fix base href
-        run: sed -i 's|<base href="/" />|<base href="/Art_page/" />|' release/wwwroot/index.html
       - run: cp release/wwwroot/index.html release/wwwroot/404.html
       - run: touch release/wwwroot/.nojekyll
       - uses: actions/upload-pages-artifact@v3
